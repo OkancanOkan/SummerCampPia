@@ -22,13 +22,13 @@ export class AddhospitalComponent implements OnInit {
 
   onAdd(){
       const body={
+        // 'id' : this.selectedCity, kanka burada sadece Hastane ismi postlayabildim cünkü diğer city department gibi alanlar database
+        // tarafında farklı anlamadığın yerde konusalım
         'name' : this.hospitalName,
-        'city_id' : this.selectedCity
+        // 'city_id' : this.selectedCity
       }
       this.sendHospital.postData(body).subscribe((data=>(
        alert('Ekleme işlemi yapıldı')
-
-
       )))
 
     // console.warn(this.hospitalName)
