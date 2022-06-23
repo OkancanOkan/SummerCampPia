@@ -6,8 +6,8 @@ import {HttpClient} from "@angular/common/http";
 })
 export class DepartmentDataService {
 
-
-  _url="http://172.16.88.63:8080/api/clinics/2"
+  _hospital_id='2'
+  _url="http://localhost:8080/api/clinics"
 
   constructor(private http:HttpClient) { }
   departments(){
