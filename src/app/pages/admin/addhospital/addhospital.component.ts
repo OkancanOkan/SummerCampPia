@@ -11,7 +11,7 @@ export class AddhospitalComponent implements OnInit {
 
   constructor(private cityData:CityDataService,private sendHospital:HospitalDataService) { }
   cities:any;
-  hospitalName:any;
+  sendHospitalName:any;
   selectedCity:any
   ngOnInit(): void {
     this.cityData.cities().subscribe((data => (
@@ -24,7 +24,7 @@ export class AddhospitalComponent implements OnInit {
       const body={
         // 'id' : this.selectedCity, kanka burada sadece Hastane ismi postlayabildim cünkü diğer city department gibi alanlar database
         // tarafında farklı anlamadığın yerde konusalım
-        'name' : this.hospitalName,
+        'name' : this.sendHospitalName,
         // 'city_id' : this.selectedCity
       }
       this.sendHospital.postData(body).subscribe((data=>(

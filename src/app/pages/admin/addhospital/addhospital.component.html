@@ -5,13 +5,13 @@
       <div class="card-body" >
         <h5 class="card-title">Hastaneye Ait Bilgileri Giriniz</h5>
         <br>
-        <input type="name" [(ngModel)]="hospitalName"  id="hospitalName" style="margin-bottom: 15px"  class="form-control form-control-lg" placeholder="Hastane Adı"/>
-        <div class="div">{{hospitalName}} {{selectedCity}}</div>
+        <input type="name" [(ngModel)]="sendHospitalName"  id="hospitalName" style="margin-bottom: 15px"  class="form-control form-control-lg" placeholder="Hastane Adı"/>
+        <div class="div">{{sendHospitalName}}</div>
 
 
         <select class="form-select"  style="margin-bottom: 15px" aria-label="Default select example">
           <option selected>Hastanenin Bulunduğu İl</option>
-          <option value="{{city.name}}" *ngFor="let city of cities" [(ngModel)]="selectedCity">{{city.id}}</option>
+          <option value="{{city.name}}" *ngFor="let city of cities" [(ngModel)]="selectedCity">{{city.name}}</option>
 
         </select>
         <div class="checkbokContainer" style="align-items: center; display: flex">
