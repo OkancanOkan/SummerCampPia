@@ -7,20 +7,19 @@
         <br>
         <input type="name" style="margin-bottom: 15px"  formControlName="addingDoctor" class="form-control form-control-lg" placeholder="Doktor Adı Soyadı"/>
         <select class="form-select" style="margin-bottom: 15px" aria-label="Default select example">
-          <option selected>Doktor'un Çalıştığı İL</option>
+          <option selected>Doktor'un Çalışacağı Şehir </option>
           <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+
         </select>
         <select class="form-select" style="margin-bottom: 15px"   aria-label="Default select example">
+          <option selected>Doktor'un Çalışacağı Hastane</option>
           <option  *ngFor="let hospital of  hospitals" [value]="hospital.name" > {{hospital.name}}</option>
 
         </select>
         <select class="form-select" aria-label="Default select example">
           <option selected>Doktor'un Çalıştığı Departman</option>
-          <option value="1" >Okancan</option>
-          <option value="2" >Okancan</option>
-          <option value="3" >Okancan</option>
+          <option *ngFor="let hospital of  hospitals" [value]="hospital.id"  >{{hospital.id}}</option>
+
 
         </select>
 
