@@ -11,7 +11,7 @@
 
         <select class="form-select"  style="margin-bottom: 15px" aria-label="Default select example">
           <option selected>Hastanenin Bulunduğu İl</option>
-          <option value="{{city.name}}" *ngFor="let city of cities" [(ngModel)]="selectedCity">{{city.name}}</option>
+          <option value="{{city.name}}" *ngFor="let city of cities" [(ngModel)]="selectedCity">{{city.id}}</option>
 
         </select>
         <div class="checkbokContainer" style="align-items: center; display: flex">
@@ -36,9 +36,9 @@
 
         </div>
 
-        <a href="#" class="btn btn-primary " style=" margin-right: 10px;"(click)="onAdd()">Ekle</a>
-        <a href="#" class="btn btn-warning" style=" margin-right: 10px;">Güncelle</a>
-        <a href="#" class="btn btn-danger" style=" margin-right: 10px;">Sil</a>
+        <a class="btn btn-primary " style=" margin-right: 10px;"(click)="onAdd()">Ekle</a>
+        <a class="btn btn-warning" style=" margin-right: 10px;">Güncelle</a>
+        <a class="btn btn-danger" style=" margin-right: 10px;">Sil</a>
 
       </div>
     </div>

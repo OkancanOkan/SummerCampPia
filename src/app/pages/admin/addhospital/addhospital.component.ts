@@ -22,13 +22,12 @@ export class AddhospitalComponent implements OnInit {
 
   onAdd(){
       const body={
+        // 'id' : this.selectedCity,
         'name' : this.hospitalName,
-        'city_id' : this.selectedCity
+        // 'city_id' : this.selectedCity
       }
       this.sendHospital.postData(body).subscribe((data=>(
        alert('Ekleme işlemi yapıldı')
-
-
       )))
 
     // console.warn(this.hospitalName)
