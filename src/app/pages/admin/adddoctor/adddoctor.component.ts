@@ -14,9 +14,10 @@ export class AdddoctorComponent implements OnInit {
   hospitals :any
   cities :any
   departments:any
+  hospitalName:any
+  selectedDepartmentName :any
   ngOnInit(): void {
     this.hospitalData.hospitals().subscribe((data => (
-      console.warn(data),
       this.hospitals=data
     )))
     this.cityData.cities().subscribe((data1 => (
@@ -27,6 +28,13 @@ export class AdddoctorComponent implements OnInit {
       console.warn(data2),
         this.departments=data2
     )))
+
+
+  }
+  onAddDoctor(){
+    const body = {
+      'last_name' : this.hospitalName
+    }
   }
 
 }

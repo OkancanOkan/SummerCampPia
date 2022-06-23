@@ -9,7 +9,7 @@ export class HospitalDataService {
 
   constructor(private http:HttpClient) { }
   hospitals(){
-    return this.http.get(this.base_url + 'hospital')
+    return this.http.get(this.base_url+'hospitals')
   }
   postData(body:any){
       return this.http.post(this.base_url + 'hospital', body)

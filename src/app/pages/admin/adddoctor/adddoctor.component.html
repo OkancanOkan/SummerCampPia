@@ -13,18 +13,17 @@
         </select>
         <select class="form-select" style="margin-bottom: 15px"   aria-label="Default select example">
           <option selected>Doktor'un Çalışacağı Hastane</option>
-          <option  *ngFor="let hospital of  hospitals" [value]="hospital.name" [id]="hospital.id" > {{hospital.name}}</option>
+          <option  *ngFor="let hospital of  hospitals" [value]="hospital.name"  > {{hospital.name}}</option>
 
         </select>
         <select class="form-select" aria-label="Default select example">
           <option selected>Doktor'un Çalıştığı Departman</option>
-          <option *ngFor="let department of  departments" [value]="department.clinicName"  >{{department.clinicName}}</option>
-
+          <option *ngFor="let department of  departments" [value]="department.clinicName" [(ngModel)]="selectedDepartmentName" id="selectedID" >{{department.clinicName}}</option>
 
         </select>
 
         <br>
-        <a href="#" class="btn btn-primary " style=" margin-right: 10px;">Ekle</a>
+        <a href="#" class="btn btn-primary " style=" margin-right: 10px;" (click)="onAddDoctor()" >Ekle</a>
         <a href="#" class="btn btn-warning" style=" margin-right: 10px;">Güncelle</a>
         <a href="#" class="btn btn-danger" style=" margin-right: 10px;">Sil</a>
 

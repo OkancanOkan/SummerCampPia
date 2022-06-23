@@ -13,6 +13,8 @@ import { AdddoctorComponent } from './pages/admin/adddoctor/adddoctor.component'
 import { AddhospitalComponent } from './pages/admin/addhospital/addhospital.component';
 import { AppointmentHoursComponent } from './pages/doctor/appointment-hours/appointment-hours.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ListAppointmentComponent } from './pages/user-page/list-appointment/list-appointment.component';
+import { GetAppointmentComponent } from './pages/user-page/get-appointment/get-appointment.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     UserPageComponent,
     AdddoctorComponent,
     AddhospitalComponent,
-    AppointmentHoursComponent
+    AppointmentHoursComponent,
+    ListAppointmentComponent,
+    GetAppointmentComponent
   ],
   imports: [
     BrowserModule,
