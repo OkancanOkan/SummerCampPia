@@ -5,7 +5,7 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class CityDataService {
-  _url="http://172.16.88.63:8080/api/cities"
+  _url="http://localhost:8080/api/cities"
 
   constructor(private http:HttpClient) { }
   cities(){
