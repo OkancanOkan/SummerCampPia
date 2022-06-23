@@ -5,11 +5,14 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class HospitalDataService {
-  _url="http://localhost:8080/api/hospitals"
+  base_url="http://localhost:8080/api/"
 
   constructor(private http:HttpClient) { }
   hospitals(){
-    return this.http.get(this._url)
+    return this.http.get(this.base_url + 'hospital')
+  }
+  postData(body:any){
+      return this.http.post(this.base_url + 'hospital', body)
 
   }
 }

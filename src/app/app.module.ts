@@ -12,6 +12,7 @@ import { UserPageComponent } from './pages/user-page/user-page.component';
 import { AdddoctorComponent } from './pages/admin/adddoctor/adddoctor.component';
 import { AddhospitalComponent } from './pages/admin/addhospital/addhospital.component';
 import { AppointmentHoursComponent } from './pages/doctor/appointment-hours/appointment-hours.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,9 @@ import { AppointmentHoursComponent } from './pages/doctor/appointment-hours/appo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

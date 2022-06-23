@@ -5,11 +5,13 @@
       <div class="card-body" >
         <h5 class="card-title">Hastaneye Ait Bilgileri Giriniz</h5>
         <br>
-        <input type="name" id="hospitalName" style="margin-bottom: 15px" formControlName="crudHospital" class="form-control form-control-lg"  placeholder="Hastane Adı"/>
+        <input type="name" [(ngModel)]="hospitalName"  id="hospitalName" style="margin-bottom: 15px"  class="form-control form-control-lg" placeholder="Hastane Adı"/>
+        <div class="div">{{hospitalName}} {{selectedCity}}</div>
+
 
         <select class="form-select"  style="margin-bottom: 15px" aria-label="Default select example">
           <option selected>Hastanenin Bulunduğu İl</option>
-          <option value="{{city.name}}" *ngFor="let city of cities">{{city.name}}</option>
+          <option value="{{city.name}}" *ngFor="let city of cities" [(ngModel)]="selectedCity">{{city.name}}</option>
 
         </select>
         <div class="checkbokContainer" style="align-items: center; display: flex">
@@ -34,7 +36,7 @@
 
         </div>
 
-        <a href="#" class="btn btn-primary " style=" margin-right: 10px;">Ekle</a>
+        <a href="#" class="btn btn-primary " style=" margin-right: 10px;"(click)="onAdd()">Ekle</a>
         <a href="#" class="btn btn-warning" style=" margin-right: 10px;">Güncelle</a>
         <a href="#" class="btn btn-danger" style=" margin-right: 10px;">Sil</a>
 
