@@ -6,6 +6,7 @@ import {HospitalDataService} from "../../../services/hospital-data.service";
   selector: 'app-addhospital',
   templateUrl: './addhospital.component.html',
   styleUrls: ['./addhospital.component.scss']
+
 })
 export class AddhospitalComponent implements OnInit {
 

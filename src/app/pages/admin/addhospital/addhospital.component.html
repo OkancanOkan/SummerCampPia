@@ -1,47 +1,51 @@
-<div class="col-sm-6">
-  <div  style="padding-left: 20%;margin-top: 29px">
-    <h2>Hastane Ekle</h2>
-    <div class="card">
-      <div class="card-body" >
-        <h5 class="card-title">Hastaneye Ait Bilgileri Giriniz</h5>
-        <br>
-        <input type="name" [(ngModel)]="sendHospitalName"  id="hospitalName" style="margin-bottom: 15px"  class="form-control form-control-lg" placeholder="Hastane Adı"/>
-        <div class="div">{{sendHospitalName}}</div>
+  <div class="col-sm-6">
+    <div  style="padding-left: 20%;margin-top: 29px">
+      <h2>Hastane Ekle</h2>
+      <div class="card">
+        <div class="card-body" >
+          <h5 class="card-title">Hastaneye Ait Bilgileri Giriniz</h5>
+          <br>
+          <input type="name" [(ngModel)]="sendHospitalName"  id="hospitalName" style="margin-bottom: 15px"  class="form-control form-control-lg" placeholder="Hastane Adı"/>
+          <div class="div">{{sendHospitalName}}</div>
 
 
-        <select class="form-select"  style="margin-bottom: 15px" aria-label="Default select example">
-          <option selected>Hastanenin Bulunduğu İl</option>
-          <option value="{{city.name}}" *ngFor="let city of cities" [(ngModel)]="selectedCity">{{city.name}}</option>
+          <select class="form-select"  style="margin-bottom: 15px" aria-label="Default select example">
+            <option selected>Hastanenin Bulunduğu İl</option>
+            <option value="{{city.name}}" *ngFor="let city of cities"  [(ngModel)]="selectedCity">{{city.name}}</option>
 
-        </select>
-        <div class="checkbokContainer" style="align-items: center; display: flex">
-          <div class="form-check" >
-            <input class="form-check-input" type="checkbox" value="" id="checkDahiliye">
-            <label class="form-check-label" for="checkDahiliye">
-              Dahiliye
-            </label>
+          </select>
+          <div class="checkbokContainer" style="align-items: center; display: flex">
+            <div class="form-check" >
+              <input class="form-check-input" type="checkbox" value="" id="checkDahiliye">
+              <label class="form-check-label" for="checkDahiliye">
+                Dahiliye
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="CheckCildiye" checked>
+              <label class="form-check-label" for="CheckCildiye">
+                Cildiye
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="checkCerrahi" checked>
+              <label class="form-check-label" for="checkCerrahi">
+                Genel Cerrahi
+              </label>
+            </div>
+
           </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="CheckCildiye" checked>
-            <label class="form-check-label" for="CheckCildiye">
-              Cildiye
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="checkCerrahi" checked>
-            <label class="form-check-label" for="checkCerrahi">
-              Genel Cerrahi
-            </label>
-          </div>
+
+          <a class="btn btn-primary " style=" margin-right: 10px;"(click)="onAdd()">Ekle</a>
+          <a class="btn btn-warning" style=" margin-right: 10px;">Güncelle</a>
+          <a class="btn btn-danger" style=" margin-right: 10px;">Sil</a>
 
         </div>
-
-        <a class="btn btn-primary " style=" margin-right: 10px;"(click)="onAdd()">Ekle</a>
-        <a class="btn btn-warning" style=" margin-right: 10px;">Güncelle</a>
-        <a class="btn btn-danger" style=" margin-right: 10px;">Sil</a>
-
       </div>
     </div>
+
   </div>
 
-</div>
+
+
+
