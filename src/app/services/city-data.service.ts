@@ -5,11 +5,11 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class CityDataService {
-  _url="http://localhost:8080/api/cities"
+  base_url="http://localhost:8080/api/cities"
 
   constructor(private http:HttpClient) { }
   cities(){
-    return this.http.get(this._url)
+    return this.http.get(this.base_url)
 
   }
 }

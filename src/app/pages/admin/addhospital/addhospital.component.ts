@@ -6,34 +6,35 @@ import {HospitalDataService} from "../../../services/hospital-data.service";
   selector: 'app-addhospital',
   templateUrl: './addhospital.component.html',
   styleUrls: ['./addhospital.component.scss']
+
 })
 export class AddhospitalComponent implements OnInit {
 
-  constructor(private cityData:CityDataService,private sendHospital:HospitalDataService) { }
-  cities:any;
-  sendHospitalName:any;
-  selectedCity:any
-  ngOnInit(): void {
-    this.cityData.cities().subscribe((data => (
-      this.cities=data
-    )))
-
+  constructor(private cityData: CityDataService, private sendHospital: HospitalDataService) {
   }
 
-  onAdd(){
-      const body={
-        // 'id' : this.selectedCity, kanka burada sadece Hastane ismi postlayabildim cünkü diğer city department gibi alanlar database
-        // tarafında farklı anlamadığın yerde konusalım
-        'name' : this.sendHospitalName,
-        // 'city_id' : this.selectedCity
-      }
-      this.sendHospital.postData(body).subscribe((data=>(
-       alert('Ekleme işlemi yapıldı')
-      )))
+  cityList: any;
+  sendHospitalName: any;
+  selectedCityData: any;
 
+  ngOnInit(): void {
+    this.cityData.cities().subscribe((data => (
+      this.cityList = data
+    )))
+  }
+
+  onAdd() {
+    const body = {
+      name: this.sendHospitalName,
+      // 'city_id': {
+      //   'name': this.selectedCityData
+      // }
+    }
+    this.sendHospital.postData(body).subscribe((data2 => (
+      alert('Ekleme işlemi yapıldı')
+    )))
     // console.warn(this.hospitalName)
     // console.warn(this.selectedCity)
   }
 }
-
 
