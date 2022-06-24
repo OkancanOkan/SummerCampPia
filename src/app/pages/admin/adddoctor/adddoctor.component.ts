@@ -21,11 +21,9 @@ export class AdddoctorComponent implements OnInit {
       this.hospitals=data
     )))
     this.cityData.cities().subscribe((data1 => (
-      console.warn(data1),
         this.cities=data1
     )))
     this.departmentData.departments().subscribe((data2 => (
-      console.warn(data2),
         this.departments=data2
     )))
 
