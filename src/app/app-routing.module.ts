@@ -7,6 +7,10 @@ import {UserPageComponent} from "./pages/user-page/user-page.component";
 
 const routes: Routes = [
   {
+    path:"",
+    component:UserPageComponent
+  },
+  {
     path: "admin",
     component:AdminComponent
   },
