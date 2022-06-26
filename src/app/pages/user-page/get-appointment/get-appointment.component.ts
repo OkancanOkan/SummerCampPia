@@ -16,6 +16,7 @@ export class GetAppointmentComponent implements OnInit {
   departmentList:any;
   hospitalList:any;
   doctorList:any;
+  selectedHours:any
 
 
 
