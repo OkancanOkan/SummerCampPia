@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HospitalDataService} from "../../../services/hospital-data.service";
 import {CityDataService} from "../../../services/city-data.service";
 import {DepartmentDataService} from "../../../services/department-data.service";
+import {DoctorDataService} from "../../../services/doctor-data.service";
 
 @Component({
   selector: 'app-adddoctor',
@@ -10,12 +11,15 @@ import {DepartmentDataService} from "../../../services/department-data.service";
 })
 export class AdddoctorComponent implements OnInit {
 
-  constructor(private hospitalData : HospitalDataService , private cityData:CityDataService, private departmentData:DepartmentDataService ) { }
+  constructor(private hospitalData : HospitalDataService , private cityData:CityDataService, private departmentData:DepartmentDataService ,private sendDoctor :DoctorDataService) { }
   hospitals :any
   cities :any
   departments:any
-  hospitalName:any
   selectedDepartmentName :any
+  clinicID :any
+  doctorFirstName:any
+  doctorLastName:any
+
   ngOnInit(): void {
     this.hospitalData.hospitals().subscribe((data => (
       this.hospitals=data
@@ -31,8 +35,13 @@ export class AdddoctorComponent implements OnInit {
   }
   onAddDoctor(){
     const body = {
-      'last_name' : this.hospitalName
+      'firstName' :this.doctorFirstName,
+      'lastName' : this.doctorLastName,
+
     }
+    this.sendDoctor.sendDoctors(body).subscribe((data3 => (
+      alert('doctor Ekleme İşlemi Yapıldı')
+    )))
   }
 
 }

@@ -29,7 +29,7 @@ import { GetAppointmentComponent } from './pages/user-page/get-appointment/get-a
     AddhospitalComponent,
     AppointmentHoursComponent,
     ListAppointmentComponent,
-    GetAppointmentComponent
+    GetAppointmentComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,4 +12,7 @@ export class CityDataService {
     return this.http.get(this.base_url)
 
   }
+    cities2(){
+    return this.http.get(this.base_url)
+    }
 }

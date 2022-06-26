@@ -1,14 +1,21 @@
-<div >
-  <div style="padding-right: 20%;margin-top: 5%; margin-left: 35px " >
+<div class="container" >
+  <div  >
     <h2>Doktor Ekle</h2>
     <div class="card" >
      <div class="card-body">
         <h5 class="card-title">Doktor'a Ait Bilgilerini Giriniz</h5>
         <br>
-        <input type="name" style="margin-bottom: 15px"   class="form-control form-control-lg" placeholder="Doktor Adı Soyadı"/>
+       <div class="row">
+         <div class="col" style="margin-bottom: 15px">
+           <input [(ngModel)]="doctorFirstName" type="text" class="form-control" placeholder="Ad" aria-label="Name">
+         </div>
+         <div class="col">
+           <input type="text" [(ngModel)]="doctorLastName" class="form-control" placeholder="Soyad" aria-label="Surname">
+         </div>
+       </div>
         <select class="form-select" style="margin-bottom: 15px" aria-label="Default select example">
           <option selected>Doktor'un Çalışacağı Şehir </option>
-          <option *ngFor="let city of  cities" [value]="city.name">{{city.name}}</option>
+          <option *ngFor="let city of  cities" [value]="city.name"  >{{city.name}}</option>
 
         </select>
         <select class="form-select" style="margin-bottom: 15px"   aria-label="Default select example">
@@ -16,14 +23,14 @@
           <option  *ngFor="let hospital of  hospitals" [value]="hospital.name"  > {{hospital.name}}</option>
 
         </select>
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select" aria-label="Default select example"  [(ngModel)]="clinicID">
           <option selected>Doktor'un Çalıştığı Departman</option>
-          <option *ngFor="let department of  departments" [value]="department.clinicName" [(ngModel)]="selectedDepartmentName" id="selectedID" >{{department.clinicName}}</option>
+          <option *ngFor="let department of  departments" [value]="department.clinicName" id="selectedID" >{{department.clinicName}}</option>
 
         </select>
 
         <br>
-        <a href="#" class="btn btn-primary " style=" margin-right: 10px;" (click)="onAddDoctor()" >Ekle</a>
+        <a  class="btn btn-primary " style=" margin-right: 10px;" (click)="onAddDoctor()" >Ekle</a>
         <a href="#" class="btn btn-warning" style=" margin-right: 10px;">Güncelle</a>
         <a href="#" class="btn btn-danger" style=" margin-right: 10px;">Sil</a>
 

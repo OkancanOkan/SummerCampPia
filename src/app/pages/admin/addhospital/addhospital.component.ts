@@ -13,23 +13,25 @@ export class AddhospitalComponent implements OnInit {
   constructor(private cityData: CityDataService, private sendHospital: HospitalDataService) {
   }
 
-  cityList: any;
+  cities: any;
   sendHospitalName: any;
   selectedCityId: any;
 
   ngOnInit(): void {
     this.cityData.cities().subscribe((data => (
-      this.cityList = data
+      this.cities = data
     )))
   }
 
   onAdd() {
-    const body = {
-      'name': this.sendHospitalName,
-      // 'city': {
-      //   'id': this.selectedCityId
-      // }
-    }
+    const body =
+      {
+        'name': this.sendHospitalName,
+        'city': {
+          'id': this.selectedCityId
+        }
+      }
+
     this.sendHospital.postData(body).subscribe((data2 => (
       alert('Hastane Ekleme İşlemi Yapıldı')
     )))
