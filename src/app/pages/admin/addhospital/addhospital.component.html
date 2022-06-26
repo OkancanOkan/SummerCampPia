@@ -1,22 +1,25 @@
-  <div class="col-sm-6">
-    <div  style="padding-left: 20%;margin-top: 29px">
+  <div class="container" >
+    <div class="col-sm-12">
       <h2>Hastane Ekle</h2>
-      <div class="card">
+      <div class="card" >
         <div class="card-body" >
           <h5 class="card-title">Hastaneye Ait Bilgileri Giriniz</h5>
           <br>
           <input type="name" [(ngModel)]="sendHospitalName"  id="hospitalName" style="margin-bottom: 15px"  class="form-control form-control-lg" placeholder="Hastane Adı"/>
-          <div class="div">{{sendHospitalName}}</div>
+          <div class="div">{{sendHospitalName}} </div>
+<!--          Bir üst satırda bulunan sendHospitalName isimli değişken bizim form ekranında yazdığımız ngModal sayesinde input a yazdığımız veriyi tutuyor ve database-->
+<!--          tarafına göndermemiz için katkı sağlıyor -->
 
 
-          <select class="form-select"   aria-label="Default select example">
-            <option selected>Hastanenin Bulunduğu İl</option>
-              <option  *ngFor="let city of cityList"  >{{city.name}}</option>
+          <select class="form-select" style="margin-bottom: 37px"  aria-label="Default select example" name="selectedName" [(ngModel)]="selectedCityId" >
+            <option > Hastanenin Bulunduğu İl</option>
+              <option  *ngFor="let city of cities" id="cityName" placeholder="Hastanenin Bulunduğu İl">{{city.id}}</option>
+<!--            Aynı mantık ile modellediğim body sayesinde postgreSql e datayı göndermeye calısıyorum-->
 
           </select>
-          <div class="checkbokContainer" style="align-items: center; display: flex">
+          <div class="checkboxContainer" style="align-items: center; display: flex; margin-right: 10px; margin-bottom: 55px">
             <div class="form-check" >
-              <input class="form-check-input" type="checkbox" value="" id="checkDahiliye">
+              <input class="form-check-input" type="checkbox" value="" id="checkDahiliye" >
               <label class="form-check-label" for="checkDahiliye">
                 Dahiliye
               </label>
